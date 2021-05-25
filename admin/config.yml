@@ -47,7 +47,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Featured", name: "Featured", widget: "boolean", default: true }
+      - { label: "Featured", name: "featured", widget: "boolean", default: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
