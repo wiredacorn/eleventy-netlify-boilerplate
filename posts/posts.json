@@ -4,5 +4,7 @@
   "author": "Anonymous",
   "tags": [
     "post"
-  ]
+  ],
+  "featured": false,
+  "featuredImage": false
 }
