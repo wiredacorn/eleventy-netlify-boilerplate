@@ -12,3 +12,6 @@ Select your grade to see lessons.
 Select a subject to see lessons.
 
 {% include "components/subjects.njk" %}
+
+{% set navPages = collections.all | eleventyNavigation %}
+{{ navPages | dump | safe }}

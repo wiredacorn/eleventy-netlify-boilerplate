@@ -5,8 +5,8 @@ section: classroom
 date: 2018-01-01
 permalink: /classroom.html
 eleventyNavigation:
-  key: Contact
-  order: 3
+  key: Classroom
+  order: 0
 ---
 
 ## Welcome to your classroom.
