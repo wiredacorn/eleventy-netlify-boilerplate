@@ -1,9 +1,9 @@
 ---
 title: asdfasdf
-subject: History
+subject: Language
 grade: Eighth Grade
 eleventyNavigation:
-  parent: subject
-  key: title
+  parent: Eleventh Grade
+  key: History
 ---
 asdfasdf
