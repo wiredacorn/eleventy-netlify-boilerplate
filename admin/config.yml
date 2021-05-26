@@ -77,9 +77,9 @@ collections:
     create: true
     fields:
       - { name: subject, label: Subject }
-  - name: posts
-    label: Posts
-    folder: "posts"
+  - name: lesson
+    label: Lsssons
+    folder: "lessons"
     slug: "{{slug}}"
     create: true
     fields:
