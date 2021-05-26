@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+section: home
+---
+
+{{ layoutContent | safe }}
+
+Select your grade to see lessons.
+
+{% include "components/grades.njk" %}
+
+Select a subject to see lessons.
+
+{% include "components/subject.njk" %}
