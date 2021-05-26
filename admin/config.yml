@@ -41,9 +41,9 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       
   # Featured Posts
-  - name: 'lesson'
-    label: 'Lessons'
-    folder: 'lessons'
+  - name: 'featured'
+    label: 'Featured Post'
+    folder: 'post'
     create: true
     slug: "{{slug}}"
     fields:
@@ -73,12 +73,14 @@ collections:
   - name: subject
     label: Subject
     folder: "subjects"
+    slug: "{{slug}}"
     create: true
     fields:
       - { name: subject, label: Subject }
   - name: posts
     label: Posts
     folder: "posts"
+    slug: "{{slug}}"
     create: true
     fields:
       - {name: title, label: Title}
