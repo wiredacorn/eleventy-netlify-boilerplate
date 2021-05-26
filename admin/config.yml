@@ -41,9 +41,9 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       
   # Featured Posts
-  - name: 'Featured Post'
-    label: 'Featured Post'
-    folder: 'posts'
+  - name: 'lesson'
+    label: 'Lessons'
+    folder: 'lessons'
     create: true
     slug: "{{slug}}"
     fields:
@@ -70,7 +70,22 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
       - { label: "Featured Image", name: "featuredImage", widget: "image", default: "https://images-na.ssl-images-amazon.com/images/I/51tuuXjbVmL._AC_SY741_.jpg"}
       - { label: "Featured Image Alt Tag", name: "Alt Tag", widget: "string", default: "Featured Image"}
-      
-
-
-
+  - name: subject
+    label: Subject
+    folder: "subjects"
+    create: true
+    fields:
+      - { name: subject, label: Subject }
+  - name: posts
+    label: Posts
+    folder: "posts"
+    create: true
+    fields:
+      - {name: title, label: Title}
+      - {name: body, label: Body, widget: markdown}
+      - name: subject
+        label: Subject
+        widget: relation
+        collection: subjects
+        searchFields: [subject]
+        valueField: subject
