@@ -77,6 +77,13 @@ collections:
     create: true
     fields:
       - { name: subject, label: Subject }
+  - name: grade
+    label: Grade
+    folder: "grade"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { name: grade, label: Grade }
   - name: lesson
     label: Lessons
     folder: "lessons"
@@ -91,3 +98,9 @@ collections:
         collection: subject
         searchFields: [subject]
         valueField: subject
+      - name: grade
+        label: Grade
+        widget: relation
+        collection: grade
+        searchFields: [grade]
+        valueField: grade
