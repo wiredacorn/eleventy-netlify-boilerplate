@@ -105,7 +105,8 @@ collections:
         searchFields: [grade]
         valueField: grade
       - name: eleventyNavigation
-        label: navigation
-        widget: hidden
-        valueField: grade
-          
+        label: Navigation
+        widget: object
+        fields:
+        - { label: parent, default: subject,  widget: hidden }
+        - { label: key, default: title,  widget: hidden }
