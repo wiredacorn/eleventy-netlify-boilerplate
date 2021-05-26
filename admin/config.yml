@@ -72,13 +72,13 @@ collections:
       - { label: "Featured Image Alt Tag", name: "Alt Tag", widget: "string", default: "Featured Image"}
   - name: subject
     label: Subject
-    folder: "subjects"
+    folder: "subject"
     slug: "{{slug}}"
     create: true
     fields:
       - { name: subject, label: Subject }
   - name: lesson
-    label: Lsssons
+    label: Lessons
     folder: "lessons"
     slug: "{{slug}}"
     create: true
@@ -88,6 +88,6 @@ collections:
       - name: subject
         label: Subject
         widget: relation
-        collection: subjects
+        collection: subject
         searchFields: [subject]
         valueField: subject
