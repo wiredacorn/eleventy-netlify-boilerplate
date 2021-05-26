@@ -104,7 +104,8 @@ collections:
         collection: grade
         searchFields: [grade]
         valueField: grade
-      - eleventyNavigation:
-          key: title
-          parent: subject
+      - name: eleventyNavigation
+        label: navigation
+        widget: hidden
+        valueField: grade
           
