@@ -108,5 +108,5 @@ collections:
         label: Navigation
         widget: object
         fields:
-        - { name: parent, label: parent, collection: grade, valueField: grade, default: subject }
-        - { name: key, label: key, collection: subject, valueField: subject, default: title }
+        - { name: parent, label: parent, collection: grade, searchFields: [grade], valueField: grade, default: subject, widget: relation }
+        - { name: key, label: key, collection: subject, searchFields: [subject], valueField: subject, default: title, widget: relation }
