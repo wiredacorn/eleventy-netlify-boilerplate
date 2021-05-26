@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+This is a lesson.
+
+
+{{ layoutContent | safe }}
+
+{% set navPages = collections.lessons | eleventyNavigationBreadcrumb %}
+{{ navPages | dump | safe }}

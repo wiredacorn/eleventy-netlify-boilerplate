@@ -1,5 +1,5 @@
 <nav>
-  {% set navPages = collections.all | eleventyNavigation %}
+  {% set navPages = collections.all | eleventyNavigationBreadcrumb %}
   <ul>
   {%- for entry in navPages %}
     <li>

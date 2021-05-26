@@ -36,6 +36,34 @@ module.exports = function(eleventyConfig) {
       return coll;
     }, {});
   });
+  eleventyConfig.addCollection("grade", collection => {
+    const lessons = collection.getFilteredByGlob("lesson/*.md");
+    return lessons.reduce((coll, post) => {
+      const grade = post.data.grade;
+      if (!grade) {
+        return coll;
+      }
+      if (!coll.hasOwnProperty(grade)) {
+        coll[grade] = [];
+      }
+      coll[grade].push(post.data);
+      return coll;
+    }, {});
+  });
+  eleventyConfig.addCollection("subject", collection => {
+    const grades = collection.getFilteredByGlob("grade/*.md");
+    return grades.reduce((coll, post) => {
+      const subject = post.data.subject;
+      if (!subject) {
+        return coll;
+      }
+      if (!coll.hasOwnProperty(subject)) {
+        coll[subject] = [];
+      }
+      coll[subject].push(post.data);
+      return coll;
+    }, {});
+  });
 
   // Date formatting (human readable)
   eleventyConfig.addFilter("readableDate", dateObj => {

@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+---
+breadcrumbs
+{% include "components/breadcrumbs.njk" %}
+
+{{ layoutContent | safe }}
+
+Select a subject to see lessons.
+
+{% include "components/grades.njk" %}
+
+{% set navPages = collections.all | eleventyNavigation("grade") %}
+{{ navPages | dump | safe }}
