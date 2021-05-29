@@ -1,3 +1,0 @@
----
-grade: Twelfth Grade
----
