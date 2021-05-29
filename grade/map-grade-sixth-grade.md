@@ -1,3 +1,0 @@
----
-grade: Sixth Grade
----
