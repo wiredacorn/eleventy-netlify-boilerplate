@@ -1,0 +1,113 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# Uncomment below to enable drafts
+# publish_mode: editorial_workflow
+
+media_folder: "static/img" # Media files will be stored in the repo under images/uploads
+
+collections:
+  # Our blog posts
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+  # Our pages e.g. About
+  - name: "pages"
+    label: "Page"
+    folder: "pages"
+    create: false # Change to true to allow editors to create new pages
+    slug: "{{slug}}"
+    fields:
+      - { label: "Featured", name: "Featured", widget: "boolean", default: false }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Permalink", name: "permalink", widget: "string" }
+      - label: "Navigation" # https://www.11ty.dev/docs/plugins/navigation/
+        name: "eleventyNavigation"
+        widget: "object"
+        fields:
+          - { label: "Key", name: "key", widget: "string" }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
+      - { label: "Body", name: "body", widget: "markdown" }
+      
+  # Featured Posts
+  - name: 'featured'
+    label: 'Featured Post'
+    folder: 'post'
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Featured", name: "featured", widget: "boolean", default: true }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", default: "https://images-na.ssl-images-amazon.com/images/I/51tuuXjbVmL._AC_SY741_.jpg"}
+      - { label: "Featured Image Alt Tag", name: "featuredImageAlt", widget: "string", default: "Featured Image"}
+  # News Announcement
+  - name: 'News Announcement'
+    label: 'News Announcement'
+    folder: 'announcements'
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", default: "Anonymous" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["post"] }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", default: "https://images-na.ssl-images-amazon.com/images/I/51tuuXjbVmL._AC_SY741_.jpg"}
+      - { label: "Featured Image Alt Tag", name: "Alt Tag", widget: "string", default: "Featured Image"}
+  - name: subject
+    label: Subject
+    folder: "subject"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { name: subject, label: Subject }
+  - name: grade
+    label: Grade
+    folder: "grade"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - { name: grade, label: Grade }
+  - name: lesson
+    label: Lessons
+    folder: "lessons"
+    slug: "{{slug}}"
+    create: true
+    fields:
+      - {name: title, label: Title}
+      - {name: body, label: Body, widget: markdown}
+      - {name: tag, label: Tag, widget: string}
+      - name: subject
+        label: Subject
+        widget: relation
+        collection: subject
+        searchFields: [subject]
+        valueField: subject
+      - name: grade
+        label: Grade
+        widget: relation
+        collection: grade
+        searchFields: [grade]
+        valueField: grade
+      - name: eleventyNavigation
+        label: Navigation
+        widget: object
+        fields:
+        - { name: parent, label: Grade, collection: grade, searchFields: [grade], valueField: grade, default: subject, widget: relation }
+        - { name: key, label: Subject, collection: subject, searchFields: [subject], valueField: subject, default: title, widget: relation }

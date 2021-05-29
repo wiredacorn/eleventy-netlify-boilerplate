@@ -7,8 +7,3 @@ breadcrumbs
 {{ layoutContent | safe }}
 
 Select a subject to see lessons.
-
-{% include "components/grades.njk" %}
-
-{% set navPages = collections.all | eleventyNavigation("grade") %}
-{{ navPages | dump | safe }}

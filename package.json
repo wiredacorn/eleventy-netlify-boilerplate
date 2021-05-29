@@ -32,6 +32,8 @@
     "@11ty/eleventy-navigation": "^0.1.6",
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
+    "netlify": "^7.0.0",
+    "netlify-cli": "^3.31.16",
     "uglify-es": "^3.3.9"
   }
 }

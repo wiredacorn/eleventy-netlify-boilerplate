@@ -7,3 +7,5 @@ eleventyNavigation:
   key: History
 ---
 first grade history
+
+{{ page | safe }}
