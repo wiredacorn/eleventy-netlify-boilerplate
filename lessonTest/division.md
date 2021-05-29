@@ -57,4 +57,6 @@ section:
       ```
       Embeded Code Block
       ```
+  - image: /static/img/multiplication.svg
+    text: Next Section
 ---
