@@ -1,3 +1,0 @@
----
-grade: Eleventh Grade
----
