@@ -55,13 +55,13 @@ collections:
       - label: Subject
         name: subject
         widget: relation
-        multiple: true
         description: Subject
         collection: subjects
         search_fields: [subject]
         display_fields: [subject]
         value_field: subject
       - label: Lesson Section
+        description: Section
         name: section
         widget: list
         fields:
