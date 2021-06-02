@@ -5,7 +5,7 @@ layout: layouts/base.njk
 {{ layoutContent | safe }}
 
 {% if grade %}
-<p>Subjects in grade {{ grade | safe }}.</p>
+    <p>Subjects in grade {{ grade | safe }}.</p>
 {% endif %}
 
 {% set gradelist = collections.subject %}

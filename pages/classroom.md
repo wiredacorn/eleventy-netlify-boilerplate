@@ -6,7 +6,7 @@ date: 2018-01-01
 permalink: /classroom.html
 eleventyNavigation:
   key: Classroom
-  order: 0
+  order: 2
 ---
 
 ## Welcome to your classroom.

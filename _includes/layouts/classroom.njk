@@ -5,11 +5,16 @@ section: classroom
 
 {{ layoutContent | safe }}
 
-<h2>Grades</h2>
+<div style="display:flex">
+    <div style="display:block">
+        <h2>Grades</h2>
+        {% set list = collections.grade %}
+        {% include "components/getlist.njk" %}
+    </div>
 
-{% set gradelist = collections.grade %}
-
-{{ gradelist.url | safe | log }}
-
-{% include "components/gradeslist.njk" %}
- 
+    <div style="display:block">
+        <h2>Subjects</h2>
+        {% set list = collections.subject %}
+        {% include "components/getlist.njk" %}
+    </div>
+</div>

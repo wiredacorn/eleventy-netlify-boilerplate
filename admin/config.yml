@@ -10,7 +10,7 @@ media_folder: "static/img" # Media files will be stored in the repo under images
 collections:
   # Our blog posts
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Post" # Used in the UI
+    label: "Blog Post" # Used in the UI
     folder: "posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -65,5 +65,5 @@ collections:
         name: section
         widget: list
         fields:
-          - { label: "Image", name: image, widget: image, required: false }
-          - { label: "Text", name: text, widget: markdown, required: false }
+          - { label: "Image", name: image, default: "", widget: image, required: false, description: Image }
+          - { label: "Text", name: text, default: "", widget: markdown, required: false, description: Section }
