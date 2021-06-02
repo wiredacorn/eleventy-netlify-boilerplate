@@ -1,8 +1,7 @@
 ---
 title: Division
 grade: "4"
-subject:
-  - Math
+subject: Math
 section:
   - image: /static/img/division1.jpg
     text: |-
