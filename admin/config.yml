@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+  site_domain:localhost: 8888
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
@@ -65,5 +66,5 @@ collections:
         name: section
         widget: list
         fields:
-          - { label: "Image", name: image, default: "", widget: image, required: false, description: Image }
-          - { label: "Text", name: text, default: "", widget: markdown, required: false, description: Section }
+          - { label: "Image", name: image, default: false, widget: image, required: false, description: Image }
+          - { label: "Text", name: text, default: false, widget: markdown, required: false, description: Section }

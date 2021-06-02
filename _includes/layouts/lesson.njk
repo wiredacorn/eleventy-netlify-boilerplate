@@ -1,14 +1,15 @@
 ---
 layout: layouts/base.njk
 eleventyComputed:
-    tags: ["{{ grade }}", "{{ subject }}"]
     eleventyNavigation:
         key: "{{ title }}"
         parent: "{{ subject }}"
 ---
 
 {% for each in section %}
-    <img src={{ each.image }}>
+    {% if img %}
+        <img src="{{ each.image }}">
+    {% endif %}
     {{ each.text | md | safe }}
 {% endfor %}
 

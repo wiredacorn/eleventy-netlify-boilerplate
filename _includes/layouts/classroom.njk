@@ -17,4 +17,10 @@ section: classroom
         {% set list = collections.subject %}
         {% include "components/getlist.njk" %}
     </div>
+
+    <div style="display:block">
+        <h2>All Lessons</h2>
+        {% set list = collections.lesson %}
+        {% include "components/getlist.njk" %}
+    </div>
 </div>

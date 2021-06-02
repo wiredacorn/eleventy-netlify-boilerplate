@@ -1,3 +1,6 @@
 {
-    "layout": "layouts/lesson.njk"
+    "layout": "layouts/lesson.njk",
+    "tags": [
+        "lesson"
+      ]
 }
