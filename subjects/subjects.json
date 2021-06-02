@@ -1,0 +1,11 @@
+{
+"layout": "layouts/subjects.njk",
+"tags": [
+    "subject"
+    ],
+"eleventyComputed": {
+    "title": "{{ subject }}",
+    "order": "{{ subject }}"
+}
+}
+    

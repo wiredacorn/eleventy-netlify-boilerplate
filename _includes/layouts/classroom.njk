@@ -1,14 +1,15 @@
 ---
 layout: layouts/base.njk
-section: home
+section: classroom
 ---
 
 {{ layoutContent | safe }}
 
-Select your grade to see lessons.
+<h2>Grades</h2>
 
-{% include "components/grades.njk" %}
+{% set gradelist = collections.grade %}
 
+{{ gradelist.url | safe | log }}
 
-{% set postslist = collections.test %}
-{% include "components/postslist.njk" %}
+{% include "components/gradeslist.njk" %}
+ 

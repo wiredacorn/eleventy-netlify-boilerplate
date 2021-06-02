@@ -5,6 +5,17 @@ const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
+  const MarkdownIt = require("markdown-it");
+  const mdRender = new MarkdownIt();
+  eleventyConfig.addFilter("md", function(rawString) {
+    return mdRender.render(rawString);
+  });
+  eleventyConfig.addFilter("renderUsingMarkdown", function(rawString) {
+    return mdRender.render(rawString);
+  });
+  eleventyConfig.addFilter("markdown", function(rawString) {
+    return mdRender.render(rawString);
+  });
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -33,34 +44,6 @@ module.exports = function(eleventyConfig) {
         coll[author] = [];
       }
       coll[author].push(post.data);
-      return coll;
-    }, {});
-  });
-  eleventyConfig.addCollection("grade", collection => {
-    const lessons = collection.getFilteredByGlob("lesson/*.md");
-    return lessons.reduce((coll, post) => {
-      const grade = post.data.grade;
-      if (!grade) {
-        return coll;
-      }
-      if (!coll.hasOwnProperty(grade)) {
-        coll[grade] = [];
-      }
-      coll[grade].push(post.data);
-      return coll;
-    }, {});
-  });
-  eleventyConfig.addCollection("subject", collection => {
-    const grades = collection.getFilteredByGlob("grade/*.md");
-    return grades.reduce((coll, post) => {
-      const subject = post.data.subject;
-      if (!subject) {
-        return coll;
-      }
-      if (!coll.hasOwnProperty(subject)) {
-        coll[subject] = [];
-      }
-      coll[subject].push(post.data);
       return coll;
     }, {});
   });

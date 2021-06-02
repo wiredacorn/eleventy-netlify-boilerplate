@@ -1,8 +1,18 @@
 ---
 layout: layouts/base.njk
+eleventyComputed:
+    tags: ["{{ grade }}", "{{ subject }}"]
+    eleventyNavigation:
+        key: "{{ title }}"
+        parent: "{{ parent }}"
 ---
-This is a lesson.
 
+{% for each in section %}
+    <img src={{ each.image }}>
+    {{ each.text | md | safe }}
+{% endfor %}
+
+Grade: {{ grade }}
 
 {{ layoutContent | safe }}
 

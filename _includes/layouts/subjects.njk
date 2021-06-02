@@ -1,12 +1,10 @@
 ---
 layout: layouts/base.njk
 ---
-Browse By Grade
+Browse By Subject
 
 {{ layoutContent | safe }}
 
-{% set list = collections.grade %}
-
-{{ list.title }}
+{% set list = collections.subject %}
 
 {% include "components/getlist.njk" %}

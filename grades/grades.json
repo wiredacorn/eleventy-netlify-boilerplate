@@ -1,0 +1,11 @@
+{
+  "layout": "layouts/grade.njk",
+  "tags": [
+      "grade"
+    ],
+  "eleventyComputed": {
+    "title": "Grade {{ grade }}",
+    "order": "{{ grade }}"
+  }
+}
+  

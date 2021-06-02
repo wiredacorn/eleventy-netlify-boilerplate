@@ -21,47 +21,49 @@ collections:
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"], description: "Enter Grade and Subject. Example: Math, First Grade" }
       - { label: "Body", name: "body", widget: "markdown" }
-  - name: subject
-    label: Subject
-    folder: "subject"
+  - name: subjects
+    label: Subjects
+    folder: "subjects"
     slug: "{{slug}}"
     create: true
     fields:
       - { name: subject, label: Subject }
-  - name: grade
-    label: Grade
-    folder: "grade"
+  - name: grades
+    label: Grades
+    folder: "grades"
     slug: "{{slug}}"
     create: true
+    widget: number
     fields:
       - { name: grade, label: Grade }
-  - name: "lessontest"
-    label: "LessonTest"
-    folder: lessonTest
+  - name: "lesson"
+    label: "Lesson"
+    folder: lessons
     create: true    
     slug: "{{slug}}"
     fields:
       - name: title
         lable: Title
         widget: string
-      - label: "TagsList"
-        name: "tagsOldList"
-        widget: "list"
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
-        fields:
-          - label: Grade
-            name: grade
-            widget: relation
-            collection: grade
-            search_fields: [grade]
-            display_fields: [grade]
-            value_field: name
-      - label: Grades
-        name: grades
+      - label: Grade
+        name: grade
         widget: relation
-        collection: grade
+        collection: grades
         search_fields: [grade]
         display_fields: [grade]
-        value_field: name
+        value_field: grade
+      - label: Subject
+        name: subject
+        widget: relation
+        multiple: true
+        description: Subject
+        collection: subjects
+        search_fields: [subject]
+        display_fields: [subject]
+        value_field: subject
+      - label: Lesson Section
+        name: section
+        widget: list
+        fields:
+          - { label: "Image", name: image, widget: image, required: false }
+          - { label: "Text", name: text, widget: markdown, required: false }

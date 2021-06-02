@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+---
+Browse By Subject
+
+This is a subject
+
+{{ layoutContent | safe }}
+
+{% set list = collections.subject %}
+
+{% include "components/getlist.njk" %}
